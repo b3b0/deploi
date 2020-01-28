@@ -16,7 +16,7 @@ Write-Host """
             | |              
             |_|              
  ___________________________________
-|-------- version 1.0.2 ------------|
+|-------- version 1.0.6 ------------|
 |----- https://github.com/b3b0 -----|
 |___________________________________|           
 
@@ -89,6 +89,7 @@ if (-not(Test-Path "C:\Users\$env:UserName\remote-installer"))
     New-Item -ItemType "directory" "C:\Users\$env:UserName\remote-installer"
 }
 $typeOf = Read-Host "Will you use an existing procedure?"
+Write-Host "=============================="
 if ($typeOf -eq "y")
 {
     importProc
