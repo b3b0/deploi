@@ -16,7 +16,7 @@ Write-Host """
             | |              
             |_|              
  ___________________________________
-|-------- version 1.0.0 ------------|
+|-------- version 1.0.1 ------------|
 |----- https://github.com/b3b0 -----|
 |___________________________________|           
 
@@ -144,3 +144,5 @@ if (-not($typeOf -eq "y"))
         Write-Output "$listOfSourceFiles`n$global:commandstring" > "C:\Users\ddavis\remote-installer\$procName.proc"
     }
 }
+Write-Host "Press any key to continue..."
+$Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
