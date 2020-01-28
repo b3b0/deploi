@@ -36,10 +36,10 @@ Function Get-FileName($initialDirectory)
 function importProc()
 {
     [System.Collections.ArrayList]$procElements = @()
-    Get-ChildItem C:\Users\ddavis\remote-installer\ | Select-Object -ExpandProperty Name
+    Get-ChildItem C:\Users\$env:UserName\remote-installer\ | Select-Object -ExpandProperty Name
     Write-Host "----------------------------------"
     $usedProc = Read-Host "Which will you use?"
-    $readProcFile = "C:\Users\ddavis\remote-installer\$usedProc.proc"
+    $readProcFile = "C:\Users\$env:UserName\remote-installer\$usedProc.proc"
     foreach($line in (Get-Content $readProcFile))
     {
         $procElements.Add($line)
@@ -141,7 +141,7 @@ if (-not($typeOf -eq "y"))
     if ($saveQuestion -eq "y")
     {
         $procName = Read-Host("Name of procedure?")
-        Write-Output "$listOfSourceFiles`n$global:commandstring" > "C:\Users\ddavis\remote-installer\$procName.proc"
+        Write-Output "$listOfSourceFiles`n$global:commandstring" > "C:\Users\$env:UserName\remote-installer\$procName.proc"
     }
 }
 Write-Host "Press any key to continue..."
