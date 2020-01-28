@@ -84,6 +84,10 @@ function newProc()
     $global:commandstring = Read-host "COMMAND STRING:"
 }
 [System.Collections.ArrayList]$listOfSourceFiles = @() #create an empty array that will later be defined with files to send
+if (-not(Test-Path "C:\Users\$env:UserName\remote-installer"))
+{
+    New-Item -ItemType "directory" "C:\Users\$env:UserName\remote-installer"
+}
 $typeOf = Read-Host "Will you use an existing procedure?"
 if ($typeOf -eq "y")
 {
